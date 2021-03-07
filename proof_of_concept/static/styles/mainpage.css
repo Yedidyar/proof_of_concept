@@ -1,0 +1,12 @@
+.output {
+  width: 400px;
+  float: left;
+  height: 300px;
+  background-color: blue;
+}
+.input {
+  width: 200px;
+  float: left;
+  height: 300px;
+  background-color: green;
+}
