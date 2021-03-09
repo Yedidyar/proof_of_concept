@@ -14,18 +14,64 @@
     />
   </head>
   <body>
-    <h1>חישוב זריקת חפץ לגובה</h1>
-    <div class="output" dir="rtl">
-      <form action="" method="POST">
-        <label for="velocity">מה המהירות של החפץ?</label>
-        <input type="text" name="velocity" id="velocity" placeholder="מהירות" />
+    <h1>trajectory calculator</h1>
+    <div class="input">
+      <form action="/" method="POST">
+        <!-- <label for="velocity">Velocity</label> -->
+        <input
+          type="number"
+          name="velocity"
+          id="velocity"
+          placeholder="Velocity"
+        />
         <br />
-        <label for="angel">מה הזווית של החפץ?</label>
-        <input type="text" name="angel" id="angel" placeholder="זווית" />
-        <button type="submit">אישור</button>
+        <!-- <label for="angel">Angle of launch</label> -->
+        <input
+          type="number"
+          name="angle"
+          id="angle"
+          placeholder="Angle of launch"
+        />
+        <br />
+        <button
+          type="submit"
+          id="submit_button"
+          onclick="toggle_visibility(submit_button)"
+        >
+          send this result
+        </button>
       </form>
     </div>
-    <div class="input"></div>
-    <div class="copyrights">כל הזכויות שמורות לידידיה ראשי</div>
+    <br />
+    <div id="output">
+      {% if h != None%}
+      <table class="result">
+        <tr>
+          <td>Maximum Height</td>
+          <td>{{ h }}</td>
+        </tr>
+
+        <tr>
+          <td>Horizontal Distance</td>
+          <td>{{ total_length }}</td>
+        </tr>
+
+        <tr>
+          <td>Flight Duration</td>
+          <td>{{ total_time }}</td>
+        </tr>
+      </table>
+      {% endif %}
+      <!-- {% if apply_alert %}
+      <script>
+        alert("The input must be an integer or float");
+      </script>
+      {% endif %} -->
+    </div>
+    <div class="copyrights">© Copyright by yedidya rashi</div>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/toggel_table.js') }}"
+    ></script>
   </body>
 </html>

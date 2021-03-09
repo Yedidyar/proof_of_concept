@@ -27,4 +27,9 @@ def trajectory_calculator(velocity, angle):
     # maximum height of the object formula
     h = ((velocity**2)*(math.sin(math.radians(angle))**2))/(2*g)
 
+    # format to 1 digit after decimel point and Attach units of measure
+    h = "{:.1f} {}".format(h, 'm')
+    solution1 = "{:.1f} {}".format(solution1, 'm')
+    total_time = "{:.1f} {}".format(total_time, 'sec')
+
     return h, solution1, total_time

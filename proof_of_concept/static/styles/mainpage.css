@@ -1,12 +1,54 @@
-.output {
-  width: 400px;
-  float: left;
-  height: 300px;
-  background-color: blue;
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 12px;
 }
-.input {
-  width: 200px;
-  float: left;
+#output {
   height: 300px;
-  background-color: green;
+  justify-content: center;
+  display: none;
+}
+
+body {
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  margin: 5px;
+}
+
+.input button {
+  width: 20%;
+  height: 40px;
+  padding: 12px;
+  background: hsl(180, 100%, 30%);
+  border-radius: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.copyrights {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: aquamarine;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+  background-color: #ddd;
 }
