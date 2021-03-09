@@ -17,7 +17,6 @@
     <h1>trajectory calculator</h1>
     <div class="input">
       <form action="/" method="POST">
-        <!-- <label for="velocity">Velocity</label> -->
         <input
           type="number"
           name="velocity"
@@ -25,7 +24,7 @@
           placeholder="Velocity"
         />
         <br />
-        <!-- <label for="angel">Angle of launch</label> -->
+
         <input
           type="number"
           name="angle"
@@ -44,7 +43,7 @@
     </div>
     <br />
     <div id="output">
-      {% if h != None%}
+      {% if error == None %}
       <table class="result">
         <tr>
           <td>Maximum Height</td>
@@ -61,6 +60,8 @@
           <td>{{ total_time }}</td>
         </tr>
       </table>
+      {% else %}
+      <p>{{error}}</p>
       {% endif %}
       <!-- {% if apply_alert %}
       <script>
