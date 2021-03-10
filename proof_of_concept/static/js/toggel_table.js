@@ -5,11 +5,9 @@
 //     x.style.display= "block";
 // }
 
-    function toggle_visibility(id) {
-       let e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-
+let toggle_visibility = function () {
+   
+    let button = document.getElementById("output");
+    button.style.display = "block" ;
+  return false;
+};

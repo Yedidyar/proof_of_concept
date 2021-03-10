@@ -5,12 +5,12 @@ h1 {
 #output {
   height: 300px;
   justify-content: center;
-  display: block;
+  /* display: none; */
 }
 
 body {
   text-align: center;
-  background-color: bisque;
+  background-color: #f0fcd2;
 }
 
 input {
