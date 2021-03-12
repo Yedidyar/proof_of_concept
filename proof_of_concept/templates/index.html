@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link 
+    <link
       rel="stylesheet"
       type="text/css"
       rel="stylesheet"
@@ -19,32 +19,32 @@
       <form action="/" method="POST">
         <input
           type="number"
+          min="0"
           name="velocity"
           id="velocity"
           placeholder="Velocity"
+          required
         />
         <br />
 
         <input
           type="number"
+          min="0"
+          max="90"
           name="angle"
           id="angle"
           placeholder="Angle of launch"
+          required
         />
         <br />
-        <button
-          type="submit"
-          id="submit_button"
-          >
-          send this result
-        </button>
+        <button type="submit" id="submit_button">send this result</button>
       </form>
     </div>
     <br />
     <div id="output">
       {% if error == None %}
       <table class="result">
-        <th colspan="2" style ="background-color: rgb(119, 191, 219);">
+        <th colspan="2" style="background-color: rgb(119, 191, 219)">
           results
         </th>
         <tr>
@@ -65,17 +65,14 @@
       {% else %}
       <p>{{error}}</p>
       {% endif %}
-      <!-- {% if apply_alert %}
-      <script>
-        alert("The input must be an integer or float");
-      </script>
-      {% endif %} -->
+      <br />
+      <br />
+      <br />
     </div>
     <div class="copyrights">© Copyright by yedidya rashi</div>
-    
   </body>
   <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='js/toggel_table.js') }}"
-    ></script>
+    type="text/javascript"
+    src="{{ url_for('static', filename='js/toggel_table.js') }}"
+  ></script>
 </html>

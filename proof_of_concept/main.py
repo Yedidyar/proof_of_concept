@@ -17,12 +17,12 @@ def calculate():
             angle = request.values.get('angle', type=float)
             h, total_length, total_time = trajectory_calculator(
                 velocity, angle)
-            return render_template('index.html', h=h, total_length=total_length, total_time=total_time ,error=error)
+            return render_template('index.html', h=h, total_length=total_length, total_time=total_time, error=error)
         else:
             error = 'the input must be an integer or a float number.'
-            return render_template('index.html',error=error)
+            return render_template('index.html', error=error)
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port='12312')
