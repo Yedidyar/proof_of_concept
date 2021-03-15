@@ -4,5 +4,6 @@
 /Lib/
 /Scripts/
 /.idea/
+/demo/
 pyvenv.cfg
-proof_of_concept/__pycache__/solver.cpython-38.pyc
+*.pyc
