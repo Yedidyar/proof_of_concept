@@ -12,6 +12,35 @@
       type="text/css"
       href="{{ url_for('static',filename='styles/mainpage.css') }}"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+      $("form").on("submit", function (event) {
+        $.ajax({
+          data: {
+            velocity: $("#velocity").val(),
+            angle: $("#angle").val(),
+          },
+          type: "POST",
+          url: "/process",
+        }).done(function (data) {
+          if (data.error) {
+            console.log('if');
+            $("#error").text(data.error).show();
+            $("#result").hide();
+          } else {
+            console.log('else');
+            $("#h").text(data.h).show();
+            $("#total_length").text(data.total_length).show();
+            $("#total_time").text(data.total_time).show();
+            $("#result").show();
+            $("#error").hide();
+          }
+        });
+        event.preventDefault();
+      });
+    });
+    </script>
   </head>
   <body>
     <h1>trajectory calculator</h1>
@@ -42,35 +71,32 @@
     </div>
     <br />
     <div id="output">
-      {% if error == None %}
-      <table class="result">
+      <table class="result" id="result" style="display: none;">
         <th colspan="2" style="background-color: rgb(119, 191, 219)">
           results
         </th>
         <tr>
           <td>Maximum Height</td>
-          <td>{{ h }}</td>
+          <td id="h"></td>
         </tr>
 
         <tr>
           <td>Horizontal Distance</td>
-          <td>{{ total_length }}</td>
+          <td id="total_length"></td>
         </tr>
 
         <tr>
           <td>Flight Duration</td>
-          <td>{{ total_time }}</td>
+          <td id="total_time"></td>
         </tr>
-      </table>
-      {% else %}
-      <p>{{error}}</p>
-      {% endif %}
+      </table>     
+      <p id="error"></p>
       <br />
       <br />
       <br />
     </div>
     <div class="copyrights">© Copyright by yedidya rashi</div>
-  </body>
+  
   <script
     type="text/javascript"
     src="{{ url_for('static', filename='js/toggel_table.js') }}"
